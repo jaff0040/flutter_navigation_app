@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/user.dart'; // Import the data model
+import '../models/user.dart';
 
 class DataPage extends StatefulWidget {
   const DataPage({super.key});
@@ -14,7 +14,8 @@ class DataPageState extends State<DataPage> {
   late Future<List<User>> users;
 
   Future<List<User>> fetchUsers() async {
-    final response = await http.get(Uri.parse('https://randomuser.me/api/?results=10'));
+    final response =
+        await http.get(Uri.parse('https://randomuser.me/api/?results=10'));
     if (response.statusCode == 200) {
       final jsonData = json.decode(response.body);
       List<dynamic> results = jsonData['results'];

@@ -22,14 +22,17 @@ class HomePage extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              color: Theme.of(context).colorScheme.primary, // Use theme color
+              color: Theme.of(context).colorScheme.primary, 
               child: Center(
                 child: Transform.rotate(
-                  angle: 0.2, // Apply a rotation transformation
+                  angle: 0.2, //rotation transformation
                   child: Text(
                     'Food Page',
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           color: Theme.of(context).colorScheme.onPrimary,
+                          fontSize:
+                              Theme.of(context).textTheme.titleLarge?.fontSize,
+                          fontWeight: FontWeight.bold,
                         ),
                     textAlign: TextAlign.center,
                   ),

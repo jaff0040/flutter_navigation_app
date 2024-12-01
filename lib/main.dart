@@ -4,10 +4,12 @@ import 'pages/data_page.dart';
 import 'pages/contact_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,13 +25,17 @@ class MyApp extends StatelessWidget {
           headlineMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ), // Updated from headline4 to headlineMedium for compatibility
       ),
-      home: MyNavigationBar(), // Set the Navigation Bar as the home widget
+      home:
+          const MyNavigationBar(), // Set the Navigation Bar as the home widget
     );
   }
 }
 
 class MyNavigationBar extends StatefulWidget {
+  const MyNavigationBar({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyNavigationBarState createState() => _MyNavigationBarState();
 }
 
@@ -38,9 +44,9 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
 
   // List of pages
   final List<Widget> _pages = [
-    const HomePage(), // Home page
-    const DataPage(), // Data page
-    ContactPage(), // Contact page
+    const HomePage(),
+    const DataPage(),
+    const ContactPage(),
   ];
 
   // Function to handle navigation bar taps
